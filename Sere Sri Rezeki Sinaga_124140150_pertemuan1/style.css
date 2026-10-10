@@ -1,0 +1,205 @@
+:root {
+    /* Palet Warna Cream / Warm Neutral */
+    --bg-color: #faf7f2;          /* Cream sangat muda untuk latar belakang halaman */
+    --card-bg: #fffdf9;          /* Cream hangat/putih gading untuk kartu & kontainer */
+    --primary-color: #8c6d53;     /* Warm Coffee / Warm Brown untuk tombol & penekanan utama */
+    --primary-hover: #735741;     /* Cokelat lebih gelap saat tombol di-hover */
+    --text-color: #3d342c;        /* Cokelat gelap netral untuk teks agar mudah dibaca */
+    --text-muted: #80756b;       /* Cokelat muda netral untuk sub-teks */
+    --border-color: #e8e2d8;     /* Border cream keabu-abuan yang lembut */
+    --table-header-bg: #f3ede2;  /* Latar header tabel cream sedang */
+    --danger-color: #c9554d;     /* Merah terracotta soft untuk tombol hapus/error */
+    --danger-hover: #b0433c;     /* Merah gelap saat di-hover */
+    --success-color: #4d8b6f;    /* Hijau sage soft untuk status kembalian/berhasil */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+header p {
+    color: var(--text-muted);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(140, 109, 83, 0.05);
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #faf8f5;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.form-group input:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(140, 109, 83, 0.15);
+}
+
+.error-msg {
+    color: var(--danger-color);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: block;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+    margin-top: 15px;
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-hover);
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    width: auto;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 25px 0;
+}
+
+.payment-summary {
+    background: #f6f1e8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid var(--border-color);
+}
+
+.payment-summary p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.final-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    border-top: 1px dashed var(--border-color);
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.text-center {
+    text-align: center;
+    color: var(--text-muted);
+}

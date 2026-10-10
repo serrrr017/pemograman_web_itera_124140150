@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Dasar JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf7f2;
+            color: #3d342c;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #8c6d53;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #fffdf9;
+            border: 1px solid #e8e2d8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(140, 109, 83, 0.05);
+        }
+        h3 {
+            margin-top: 0;
+            color: #8c6d53;
+            border-bottom: 1px solid #e8e2d8;
+            padding-bottom: 8px;
+        }
+        p {
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #4d8b6f;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Latihan Dasar JavaScript</h1>
+
+    <div class="card">
+        <h3>1. Data Diri (const & let)</h3>
+        <p>Nama: <span id="resNama" class="highlight"></span></p>
+        <p>Umur: <span id="resUmur" class="highlight"></span></p>
+        <p>Kota Asal: <span id="resKota" class="highlight"></span></p>
+    </div>
+
+    <div class="card">
+        <h3>2. Pengecekan Kelulusan (if-else)</h3>
+        <p>Nilai Ujian: <span id="resNilaiUjian"></span></p>
+        <p>Status: <span id="resKelulusan" class="highlight"></span></p>
+    </div>
+
+    <div class="card">
+        <h3>3. Kategori Umur (if-else if-else)</h3>
+        <p>Umur Seseorang: <span id="resUmurKategori"></span></p>
+        <p>Kategori: <span id="resKategori" class="highlight"></span></p>
+    </div>
+
+    <div class="card">
+        <h3>4. Konversi Hari (switch-case)</h3>
+        <p>Angka Hari: <span id="resAngkaHari"></span></p>
+        <p>Nama Hari (Inggris): <span id="resNamaHari" class="highlight"></span></p>
+    </div>
+
+    <div class="card">
+        <h3>5. Grade Nilai (Ternary Operator)</h3>
+        <p>Skor Ujian: <span id="resSkor"></span></p>
+        <p>Grade: <span id="resGrade" class="highlight"></span></p>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. Variabel Data Diri (const & let)
+        // ==========================================
+        const nama = "Sere Sri Rezeki Sinaga";
+        let umur = 19;
+        let kotaAsal = "Medan";
+
+        document.getElementById('resNama').textContent = nama;
+        document.getElementById('resUmur').textContent = umur + " tahun";
+        document.getElementById('resKota').textContent = kotaAsal;
+
+
+        // ==========================================
+        // 2. Program Pengecekan Kelulusan (if-else)
+        // ==========================================
+        let nilaiUjian = 75;
+        let statusKelulusan = "";
+
+        if (nilaiUjian >= 70) {
+            statusKelulusan = "Selamat, Anda LULUS!";
+        } else {
+            statusKelulusan = "Mohon maaf, Anda BELUM LULUS.";
+        }
+
+        document.getElementById('resNilaiUjian').textContent = nilaiUjian;
+        document.getElementById('resKelulusan').textContent = statusKelulusan;
+
+
+        // ==========================================
+        // 3. Program Kategori Umur (if-else if-else)
+        // ==========================================
+        let umurSeseorang = 19;
+        let kategori = "";
+
+        if (umurSeseorang < 12) {
+            kategori = "Anak-anak";
+        } else if (umurSeseorang >= 12 && umurSeseorang <= 17) {
+            kategori = "Remaja";
+        } else if (umurSeseorang >= 18 && umurSeseorang <= 59) {
+            kategori = "Dewasa";
+        } else {
+            kategori = "Lansia";
+        }
+
+        document.getElementById('resUmurKategori').textContent = umurSeseorang + " tahun";
+        document.getElementById('resKategori').textContent = kategori;
+
+
+        // ==========================================
+        // 4. Konversi Angka Hari (switch-case)
+        // ==========================================
+        let nomorHari = 3; // 3 = Rabu
+        let namaHari = "";
+
+        switch (nomorHari) {
+            case 1: namaHari = "Monday"; break;
+            case 2: namaHari = "Tuesday"; break;
+            case 3: namaHari = "Wednesday"; break;
+            case 4: namaHari = "Thursday"; break;
+            case 5: namaHari = "Friday"; break;
+            case 6: namaHari = "Saturday"; break;
+            case 7: namaHari = "Sunday"; break;
+            default: namaHari = "Tidak valid";
+        }
+
+        document.getElementById('resAngkaHari').textContent = nomorHari;
+        document.getElementById('resNamaHari').textContent = namaHari;
+
+
+        // ==========================================
+        // 5. Kalkulator Sederhana Grade Nilai (Ternary)
+        // ==========================================
+        let skor = 85;
+        let grade = skor >= 85 ? "A" : 
+                    skor >= 75 ? "B" : 
+                    skor >= 65 ? "C" : "D";
+
+        document.getElementById('resSkor').textContent = skor;
+        document.getElementById('resGrade').textContent = grade;
+    </script>
+</body>
+</html>

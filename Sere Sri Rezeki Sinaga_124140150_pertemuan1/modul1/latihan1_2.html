@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Lanjutan JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf7f2;
+            color: #3d342c;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #8c6d53;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #fffdf9;
+            border: 1px solid #e8e2d8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(140, 109, 83, 0.05);
+        }
+        h3 {
+            margin-top: 0;
+            color: #8c6d53;
+            border-bottom: 1px solid #e8e2d8;
+            padding-bottom: 8px;
+        }
+        p, label {
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #4d8b6f;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #e8e2d8;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 200px;
+            background-color: #faf8f5;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #8c6d53;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        button:hover {
+            background-color: #735741;
+        }
+        .scroll-box {
+            max-height: 150px;
+            overflow-y: auto;
+            background: #faf8f5;
+            padding: 10px;
+            border: 1px solid #e8e2d8;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Latihan Lanjutan JavaScript</h1>
+
+    <!-- 1. Tabel Perkalian -->
+    <div class="card">
+        <h3>1. Tabel Perkalian (Loop)</h3>
+        <p>Angka Pilihan: <span id="resAngkaPilihan" class="highlight"></span></p>
+        <div id="resPerkalian" class="scroll-box"></div>
+    </div>
+
+    <!-- 2. Menghitung Faktorial -->
+    <div class="card">
+        <h3>2. Fungsi Faktorial</h3>
+        <p>Angka: <span id="resAngkaFaktorial"></span></p>
+        <p>Hasil Faktorial: <span id="resHasilFaktorial" class="highlight"></span></p>
+    </div>
+
+    <!-- 3. Bilangan Prima -->
+    <div class="card">
+        <h3>3. Pengecekan Bilangan Prima</h3>
+        <p>Angka: <span id="resAngkaPrima"></span></p>
+        <p>Status: <span id="resStatusPrima" class="highlight"></span></p>
+    </div>
+
+    <!-- 4. Kalkulator BMI -->
+    <div class="card">
+        <h3>4. Kalkulator BMI (Event Handler)</h3>
+        <div class="form-group">
+            <label for="beratInput">Berat Badan (kg):</label><br>
+            <input type="number" id="beratInput" placeholder="Contoh: 60" value="60">
+        </div>
+        <div class="form-group">
+            <label for="tinggiInput">Tinggi Badan (meter, cth: 1.65):</label><br>
+            <input type="number" step="0.01" id="tinggiInput" placeholder="Contoh: 1.65" value="1.65">
+        </div>
+        <button id="btnHitungBMI">Hitung BMI</button>
+        <p style="margin-top: 15px;">Hasil BMI: <span id="resBMI" class="highlight">-</span></p>
+        <p>Kategori: <span id="resKategoriBMI" class="highlight">-</span></p>
+    </div>
+
+    <!-- 5. FizzBuzz -->
+    <div class="card">
+        <h3>5. Program FizzBuzz (1 - 100)</h3>
+        <div id="resFizzBuzz" class="scroll-box"></div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. Loop Tabel Perkalian (1 sampai 10)
+        // ==========================================
+        let angkaPilihan = 7; // Ubah angka sesuai keinginan
+        document.getElementById('resAngkaPilihan').textContent = angkaPilihan;
+        
+        let perkalianHTML = "";
+        for (let i = 1; i <= 10; i++) {
+            perkalianHTML += `${angkaPilihan} × ${i} = ${angkaPilihan * i}<br>`;
+        }
+        document.getElementById('resPerkalian').innerHTML = perkalianHTML;
+
+
+        // ==========================================
+        // 2. Fungsi Menghitung Faktorial
+        // ==========================================
+        function hitungFaktorial(n) {
+            if (n === 0 || n === 1) return 1;
+            let hasil = 1;
+            for (let i = 2; i <= n; i++) {
+                hasil *= i;
+            }
+            return hasil;
+        }
+
+        let angkaFak = 5; // 5! = 5 x 4 x 3 x 2 x 1 = 120
+        document.getElementById('resAngkaFaktorial').textContent = angkaFak;
+        document.getElementById('resHasilFaktorial').textContent = hitungFaktorial(angkaFak);
+
+
+        // ==========================================
+        // 3. Fungsi Memeriksa Bilangan Prima
+        // ==========================================
+        function cekBilanganPrima(n) {
+            if (n <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+
+        let angkaPrimaCek = 13;
+        document.getElementById('resAngkaPrima').textContent = angkaPrimaCek;
+        document.getElementById('resStatusPrima').textContent = cekBilanganPrima(angkaPrimaCek) ? "Adalah Bilangan Prima" : "Bukan Bilangan Prima";
+
+
+        // ==========================================
+        // 4. Kalkulator BMI dengan Event Handler
+        // ==========================================
+        function hitungBMI(berat, tinggi) {
+            return berat / (tinggi * tinggi);
+        }
+
+        document.getElementById('btnHitungBMI').addEventListener('click', function() {
+            let berat = parseFloat(document.getElementById('beratInput').value);
+            let tinggi = parseFloat(document.getElementById('tinggiInput').value);
+
+            if (isNaN(berat) || isNaN(tinggi) || tinggi <= 0) {
+                alert("Masukkan berat dan tinggi badan dengan benar!");
+                return;
+            }
+
+            let bmi = hitungBMI(berat, tinggi);
+            let kategori = "";
+
+            if (bmi < 18.5) {
+                kategori = "Kurus (Underweight)";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                kategori = "Normal (Ideal)";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                kategori = "Gemuk (Overweight)";
+            } else {
+                kategori = "Obesitas";
+            }
+
+            document.getElementById('resBMI').textContent = bmi.toFixed(2);
+            document.getElementById('resKategoriBMI').textContent = kategori;
+        });
+
+
+        // ==========================================
+        // 5. Program FizzBuzz (1 - 100)
+        // ==========================================
+        let fizzBuzzText = "";
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                fizzBuzzText += "<b>FizzBuzz</b> ";
+            } else if (i % 3 === 0) {
+                fizzBuzzText += "<span style='color:#c9554d;'>Fizz</span> ";
+            } else if (i % 5 === 0) {
+                fizzBuzzText += "<span style='color:#4d8b6f;'>Buzz</span> ";
+            } else {
+                fizzBuzzText += i + " ";
+            }
+        }
+        document.getElementById('resFizzBuzz').innerHTML = fizzBuzzText;
+    </script>
+</body>
+</html>
