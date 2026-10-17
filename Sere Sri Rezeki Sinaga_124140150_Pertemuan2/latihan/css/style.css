@@ -1,0 +1,4 @@
+/* Styling tambahan jika diperlukan, sebagian besar di-handle oleh Tailwind CSS */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
