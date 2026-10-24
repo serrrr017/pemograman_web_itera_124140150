@@ -1,0 +1,143 @@
+.book-card {
+  display: flex;
+  gap: 1rem;
+  background: var(--white-warm);
+  border: 2px solid var(--latte);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(107, 68, 41, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  animation: card-in 0.45s ease both;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--rose);
+}
+
+/* Sampul buku berbentuk buku mini dengan punggung di sisi kiri */
+.book-cover {
+  position: relative;
+  flex: 0 0 74px;
+  height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px 12px 12px 6px;
+  background: linear-gradient(135deg, var(--cover), rgba(74, 50, 37, 0.55));
+  background-color: var(--cover);
+  box-shadow: 4px 6px 12px rgba(74, 50, 37, 0.25);
+  color: var(--cream);
+}
+
+.book-cover::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(255, 253, 249, 0.35);
+}
+
+.book-cover span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.book-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
+.book-title {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin: 0.45rem 0 0.1rem;
+  color: var(--cocoa);
+  overflow-wrap: anywhere;
+}
+
+.book-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--caramel);
+  margin-bottom: 0.7rem;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.badge-milik {
+  background: var(--latte);
+  color: var(--mocha-dark);
+}
+.badge-baca {
+  background: var(--rose-soft);
+  color: var(--rose-deep);
+}
+.badge-beli {
+  background: #f6e7c8;
+  color: #9a6b1f;
+}
+
+.book-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.btn-edit,
+.btn-delete {
+  border: none;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn-edit {
+  background: var(--latte);
+  color: var(--mocha-dark);
+}
+.btn-edit:hover {
+  background: var(--caramel);
+  color: var(--white-warm);
+}
+.btn-delete {
+  background: var(--rose-soft);
+  color: var(--rose-deep);
+}
+.btn-delete:hover {
+  background: var(--rose-deep);
+  color: var(--white-warm);
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-card {
+    animation: none;
+  }
+}

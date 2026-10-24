@@ -1,0 +1,109 @@
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(74, 50, 37, 0.5);
+  backdrop-filter: blur(3px);
+  animation: fade-in 0.2s ease both;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  background: var(--white-warm);
+  border: 3px solid var(--latte);
+  border-radius: 24px;
+  padding: 1.75rem 1.5rem 1.4rem;
+  box-shadow: 0 20px 50px rgba(74, 50, 37, 0.35);
+  animation: pop-in 0.3s ease both;
+}
+
+.dialog-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.6rem;
+  border-radius: 50%;
+  background: var(--rose-soft);
+  font-size: 1.9rem;
+}
+
+.dialog h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.dialog p {
+  color: var(--mocha);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.dialog-actions button {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dialog-cancel {
+  background: var(--latte);
+  color: var(--mocha-dark);
+}
+.dialog-cancel:hover {
+  background: var(--caramel);
+  color: var(--white-warm);
+}
+
+.dialog-confirm {
+  background: var(--rose-deep);
+  color: var(--white-warm);
+}
+.dialog-confirm:hover {
+  background: #b0626b;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog-overlay,
+  .dialog {
+    animation: none;
+  }
+}

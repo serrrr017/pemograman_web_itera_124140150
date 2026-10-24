@@ -1,0 +1,117 @@
+.book-filter {
+  margin-bottom: 1.25rem;
+}
+
+.filter-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.search-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.7rem 1.1rem 0.7rem 2.6rem;
+  border: 2px solid var(--latte);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--cocoa);
+  background: var(--white-warm);
+}
+
+.search-input::placeholder {
+  color: var(--caramel);
+}
+
+.sort-select {
+  padding: 0.7rem 1.1rem;
+  border: 2px solid var(--latte);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--mocha-dark);
+  background: var(--white-warm);
+  cursor: pointer;
+}
+
+.search-input:focus,
+.sort-select:focus {
+  outline: none;
+  border-color: var(--rose-deep);
+  box-shadow: 0 0 0 4px var(--rose-soft);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  border: 2px solid var(--latte);
+  border-radius: 999px;
+  background: var(--white-warm);
+  color: var(--mocha);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  border-color: var(--rose);
+  background: var(--rose-soft);
+}
+
+.chip-count {
+  min-width: 1.4rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  background: var(--latte);
+  color: var(--mocha-dark);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.chip-active {
+  background: var(--mocha);
+  border-color: var(--mocha);
+  color: var(--cream);
+  box-shadow: 0 4px 10px rgba(139, 94, 60, 0.3);
+}
+
+.chip-active:hover {
+  background: var(--mocha-dark);
+  border-color: var(--mocha-dark);
+}
+
+.chip-active .chip-count {
+  background: var(--rose);
+  color: var(--mocha-dark);
+}
+
+@media (max-width: 560px) {
+  .filter-row {
+    flex-direction: column;
+  }
+}

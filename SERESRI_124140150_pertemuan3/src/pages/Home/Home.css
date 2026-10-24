@@ -1,0 +1,126 @@
+.container {
+  max-width: 860px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.section-title .count {
+  color: var(--rose-deep);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ===== Hero banner ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+  padding: 1.9rem 2rem;
+  border-radius: 28px;
+  color: var(--cream);
+  background: linear-gradient(135deg, var(--mocha) 0%, #a97c5b 55%, #c99b84 100%);
+  box-shadow: 0 14px 34px rgba(107, 68, 41, 0.28);
+}
+
+/* Lingkaran dekoratif lembut */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(247, 223, 224, 0.18);
+  pointer-events: none;
+}
+.hero::before {
+  width: 220px;
+  height: 220px;
+  top: -80px;
+  right: -50px;
+}
+.hero::after {
+  width: 130px;
+  height: 130px;
+  bottom: -55px;
+  left: 38%;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(250, 243, 232, 0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  color: var(--white-warm);
+  font-size: 2.2rem;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+}
+
+.hero p {
+  font-weight: 500;
+  opacity: 0.92;
+}
+
+.hero-stats {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.hero-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 78px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 20px;
+  background: rgba(255, 253, 249, 0.18);
+  border: 1.5px solid rgba(255, 253, 249, 0.35);
+  backdrop-filter: blur(4px);
+}
+
+.hero-pill strong {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+.hero-pill span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 1.5rem 1.25rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}

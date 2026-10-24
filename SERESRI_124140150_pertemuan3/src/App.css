@@ -1,0 +1,42 @@
+/* ===== Tema Cream Mocha ===== */
+:root {
+  --cream: #faf3e8;
+  --cream-deep: #f3e6d3;
+  --latte: #e8d5bd;
+  --caramel: #c9a27e;
+  --mocha: #8b5e3c;
+  --mocha-dark: #6b4429;
+  --cocoa: #4a3225;
+  --rose: #e8b4b8;
+  --rose-soft: #f7dfe0;
+  --rose-deep: #c97b84;
+  --white-warm: #fffdf9;
+  --shadow: 0 6px 18px rgba(107, 68, 41, 0.1);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--cocoa);
+  background-color: var(--cream);
+  background-image: radial-gradient(var(--latte) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--mocha-dark);
+}
+
+.App {
+  min-height: 100vh;
+}
