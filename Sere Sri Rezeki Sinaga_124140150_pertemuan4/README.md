@@ -106,13 +106,13 @@ Pastikan `math_operations.py` berada dalam folder yang sama dengan `main.py`.
 ## Screenshot Hasil Eksekusi
 
 ### Soal 1: Penghitung BMI
-[Hasil Soal 1](screenshots/soal1.png)
+![Hasil Soal 1](screenshots/soal1.png)
 
 ### Soal 2: Pengelolaan Data Nilai Mahasiswa
-[Hasil Soal 2](screenshots/soal2.png)
+![Hasil Soal 2](screenshots/soal2.png)
 
 ### Soal 3: Modul Matematika
-[Hasil Soal 3](screenshots/soal3.png)
+![Hasil Soal 3](screenshots/soal3.png)
 
 ---
 
