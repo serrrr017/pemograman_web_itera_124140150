@@ -1,12 +1,12 @@
 # Pyramid Mahasiswa & Matakuliah — RESTful API
 
-## Identitas Praktikan
+## Identitas 
 
 | | |
 |---|---|
 | **Nama Lengkap** | Sere Sri Rezeki Sinaga |
 | **NIM** | 124140150 |
-| **Kelas Praktikum** | RA / RB *(isi sesuai kelas Anda)* |
+| **Kelas Praktikum** | RA |
 | **Mata Kuliah** | Pemrograman Web |
 | **Pertemuan** | 6 — Pyramid Framework, PostgreSQL & SQLAlchemy |
 
