@@ -143,28 +143,88 @@ Contoh respons yang diharapkan:
 | ID tidak ada | 404 | `{"error": "Mata kuliah dengan ID 5 tidak ditemukan"}` |
 
 ## Bukti Pengujian (Screenshot)
-
-> Letakkan tangkapan layar hasil pengujian cURL/Postman Anda di folder
-> `screenshots/` dengan nama berikut, lalu pastikan gambar tampil di bawah.
-
-### Mahasiswa
-
-![GET semua mahasiswa](screenshots/mahasiswa-01-get-all.png)
-![GET detail mahasiswa](screenshots/mahasiswa-02-get-one.png)
-![POST mahasiswa](screenshots/mahasiswa-03-post.png)
-![PUT mahasiswa](screenshots/mahasiswa-04-put.png)
-![DELETE mahasiswa](screenshots/mahasiswa-05-delete.png)
-![404 mahasiswa](screenshots/mahasiswa-06-not-found.png)
-
-### Matakuliah
-
-![GET semua matakuliah](screenshots/matakuliah-01-get-all.png)
-![GET detail matakuliah](screenshots/matakuliah-02-get-one.png)
-![POST matakuliah](screenshots/matakuliah-03-post.png)
-![POST matakuliah tidak lengkap (400)](screenshots/matakuliah-04-post-400.png)
-![PUT matakuliah](screenshots/matakuliah-05-put.png)
-![DELETE matakuliah](screenshots/matakuliah-06-delete.png)
-![GET matakuliah tidak ada (404)](screenshots/matakuliah-07-not-found.png)
+ 
+### A. Modul Mahasiswa
+ 
+#### 1. GET Semua Mahasiswa — `GET /api/mahasiswa`
+ 
+<img src="screenshots/mahasiswa-01-get-all.png" alt="1. GET Semua Mahasiswa — `GET /api/mahasiswa`" width="650">
+<br>
+---
+ 
+#### 2. GET Detail Mahasiswa — `GET /api/mahasiswa/1`
+ 
+<img src="screenshots/mahasiswa-02-get-one.png" alt="2. GET Detail Mahasiswa — `GET /api/mahasiswa/1`" width="650">
+<br>
+---
+ 
+#### 3. POST Tambah Mahasiswa — `POST /api/mahasiswa`
+ 
+<img src="screenshots/mahasiswa-03-post.png" alt="3. POST Tambah Mahasiswa — `POST /api/mahasiswa`" width="650">
+<br>
+---
+ 
+#### 4. PUT Ubah Mahasiswa — `PUT /api/mahasiswa/3`
+ 
+<img src="screenshots/mahasiswa-04-put.png" alt="4. PUT Ubah Mahasiswa — `PUT /api/mahasiswa/3`" width="650">
+<br>
+---
+ 
+#### 5. DELETE Hapus Mahasiswa — `DELETE /api/mahasiswa/3`
+ 
+<img src="screenshots/mahasiswa-05-delete.png" alt="5. DELETE Hapus Mahasiswa — `DELETE /api/mahasiswa/3`" width="650">
+<br>
+---
+ 
+#### 6. GET Mahasiswa Tidak Ditemukan (404) — `GET /api/mahasiswa/3`
+ 
+<img src="screenshots/mahasiswa-06-not-found.png" alt="6. GET Mahasiswa Tidak Ditemukan (404) — `GET /api/mahasiswa/3`" width="650">
+<br>
+---
+ 
+### B. Modul Matakuliah
+ 
+#### 1. GET Semua Matakuliah — `GET /api/matakuliah`
+ 
+<img src="screenshots/matakuliah-01-get-all.png" alt="1. GET Semua Matakuliah — `GET /api/matakuliah`" width="650">
+<br>
+---
+ 
+#### 2. GET Detail Matakuliah — `GET /api/matakuliah/1`
+ 
+<img src="screenshots/matakuliah-02-get-one.png" alt="2. GET Detail Matakuliah — `GET /api/matakuliah/1`" width="650">
+<br>
+---
+ 
+#### 3. POST Tambah Matakuliah — `POST /api/matakuliah`
+ 
+<img src="screenshots/matakuliah-03-post.png" alt="3. POST Tambah Matakuliah — `POST /api/matakuliah`" width="650">
+<br>
+---
+ 
+#### 4. POST Matakuliah Tidak Lengkap (400) — tanpa `kode_mk`
+ 
+<img src="screenshots/matakuliah-04-post-400.png" alt="4. POST Matakuliah Tidak Lengkap (400) — tanpa `kode_mk`" width="650">
+<br>
+---
+ 
+#### 5. PUT Ubah Matakuliah — `PUT /api/matakuliah/1`
+ 
+<img src="screenshots/matakuliah-05-put.png" alt="5. PUT Ubah Matakuliah — `PUT /api/matakuliah/1`" width="650">
+<br>
+---
+ 
+#### 6. DELETE Hapus Matakuliah — `DELETE /api/matakuliah/5`
+ 
+<img src="screenshots/matakuliah-06-delete.png" alt="6. DELETE Hapus Matakuliah — `DELETE /api/matakuliah/5`" width="650">
+<br>
+---
+ 
+#### 7. GET Matakuliah Tidak Ditemukan (404) — `GET /api/matakuliah/99`
+ 
+<img src="screenshots/matakuliah-07-not-found.png" alt="7. GET Matakuliah Tidak Ditemukan (404) — `GET /api/matakuliah/99`" width="650">
+<br>
+---
 
 ## Struktur Proyek
 
